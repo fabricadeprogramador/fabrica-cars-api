@@ -17,6 +17,3 @@ module.exports = {
     return db
   }
 }
-//URI de conexão: mongodb+srv://fabrica-fc:<password>@cluster0.yrjuo.mongodb.net/?retryWrites=true&w=majority
-// USERNAME: fabrica - fc
-// SENHA: fabricacarspass

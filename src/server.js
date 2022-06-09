@@ -1,4 +1,8 @@
 const express = require("express")
+const clienteRoute = require("./routes/ClienteRoute")
+const loginRoute = require("./routes/LoginRoute")
+const compraRoute = require("./routes/CompraRoute")
+const produtoRoute = require("./routes/ProdutoRoute")
 
 const cors = require("cors")
 const api = express()
@@ -12,6 +16,11 @@ api.use(
     origin: "*"
   })
 )
+
+api.use("/compra", compraRoute)
+api.use("/produto", produtoRoute)
+api.use("/login", loginRoute)
+api.use("/cliente", clienteRoute)
 
 // Rota raíz
 api.get("/", (req, res) => {
