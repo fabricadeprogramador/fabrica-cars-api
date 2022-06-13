@@ -1,11 +1,31 @@
 const express = require("express")
 const router = express.Router()
+const clienteService = require("./../services/ClienteService")
 
-router.get("/:id", async (req, res) => {})
-router.get("/completo/:id", async (req, res) => {})
+//ok
+router.get("/:id", async (req, res) => {
+    let resposta = await clienteService.buscarPorId(req.params.id)
+  res.json(resposta)
+})
+//ok
+router.get("/completo/:id", async (req, res) => {
+    let resposta = await clienteService.buscarCompleto(req.params.id)
+  res.json(resposta)
+})
+//ok
+router.post("", async (req, res) => {
+    let resposta = await clienteService.cadastrar(req.body)
+  res.json(resposta)
+})
 
-router.post("", async (req, res) => {})
-router.put("/:id", async (req, res) => {})
-router.delete("/:id", async (req, res) => {})
+router.put("/:id", async (req, res) => {
+  let resposta = await clienteService.editar(req.params.id, req.body)
+  res.json(resposta)
+})
+
+router.delete("/:id", async (req, res) => {
+    let resposta = await clienteService.deletar(req.params.id)
+  res.json(resposta)
+})
 
 module.exports = router
