@@ -2,17 +2,17 @@ const express = require("express")
 const router = express.Router()
 const clienteService = require("./../services/ClienteService")
 
-//ok
+
 router.get("/:id", async (req, res) => {
     let resposta = await clienteService.buscarPorId(req.params.id)
   res.json(resposta)
 })
-//ok
+
 router.get("/completo/:id", async (req, res) => {
     let resposta = await clienteService.buscarCompleto(req.params.id)
   res.json(resposta)
 })
-//ok
+
 router.post("", async (req, res) => {
     let resposta = await clienteService.cadastrar(req.body)
   res.json(resposta)

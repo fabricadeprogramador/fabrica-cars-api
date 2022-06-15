@@ -28,7 +28,7 @@ module.exports = {
       return novoCliente
     } catch (error) {
       throw { message: error.message, status: 500 }
-    }
+    }  
   },
   
   editar: async (id, cliente) => {
